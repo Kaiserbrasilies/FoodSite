@@ -1,0 +1,95 @@
+/* ======= CONTATO MELHORADO ======= */
+.voltar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.voltar-btn:hover {
+  color: #000000;
+}
+
+.voltar-btn::before {
+  content: "←";
+  font-size: 20px;
+}
+.contato-section {
+  margin-top: 40px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.contato-section h2 {
+  font-size: 26px;
+  color: #2c2c2c;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.contato-opcoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contato-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #ddd;
+  width: 280px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contato-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contato-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contato-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.contato-card a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.contato-card a:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .contato-opcoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contato-card {
+    width: 100%;
+    max-width: 90%;
+  }
+}

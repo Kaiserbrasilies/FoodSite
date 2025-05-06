@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastBot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css"> 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="logo"><img src="img/FASTBOT.svg" alt="logo"></a>
+            <h3>Faça seu Pedido</h3>
+            <div class="buttons">
+                <button class="button" id="cart-button">
+                    <img src="img/shopping-cart.svg" alt="carrinho" class="button-icon">
+                    <span class="button-text">Carrinho</span>
+                    <span class="cart-counter">0</span>
+                </button>
+            </div>
+            <!-- Dentro do <div class="container"> do header -->
+            <button id="botao-especial" class="button" style="display: none;">
+             Botão Especial
+            </button>
+        </header>
+    </div>
+
+    <nav class="menu-horizontal-scroll">
+        <ul class="menu-scroll-list">
+          <li><a href="#bebidas">Bebidas</a></li>
+          <li><a href="#pizza">Pizza</a></li>
+          <li><a href="#calzone">Calzone</a></li>
+          <li><a href="#pastel">Pastel</a></li>
+          <li><a href="#acai">Açaí</a></li>
+          <li><a href="#porcoes">Porções</a></li>
+          <li><a href="#hamburguer">Hambúrguer</a></li>
+          <li><a href="#doces">Doces</a></li>
+        </ul>
+      </nav>
+      
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-block">
+                <img src="img/FASTBOT.svg" alt="logo" class="logo footer-logo">
+                <nav class="footer-nav">
+                    <a href="contato.html" class="footer-link">Contatos</a>
+                    <a href="admin.html" class="footer-link">Administrativo</a>
+                </nav>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/fast.bot_?igsh=NnExOWlocTVhc3Q5" class="social-link"><img src="img/insta.svg" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Carrinho -->
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title">Carrinho</h3>
+                <button class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Itens dinâmicos -->
+            </div>
+            <div class="modal-footer">
+                <span class="modal-pricetag">0 R$</span>
+                <div class="footer-buttons">
+                    <button class="button button-primary">Finalizar Pedido</button>
+                    <button class="button">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

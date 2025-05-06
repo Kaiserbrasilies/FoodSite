@@ -1,0 +1,80 @@
+.comanda-img {
+    width: 100%;
+    height: auto;
+    image-rendering: crisp-edges;
+    padding: 10px;
+    background: white;
+}
+
+.card {
+    background: white;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.btn {
+    background: #333;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.comanda-img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.btn {
+    background: #2d89ef;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #1b61c1;
+}

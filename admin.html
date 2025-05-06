@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="logo"><img src="img/FASTBOT.svg" alt="logo"></a>
+            <h3>Painel Administrativo</h3>
+        </header>
+
+        <main class="main">
+            <section class="admin-panel">
+                <!-- Seção de Login -->
+                <div class="admin-login" id="loginSection">
+                    <h2>Admin Login</h2>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" id="adminEmail" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="form-group">
+                        <label>Senha:</label>
+                        <input type="password" id="adminPassword" placeholder="Digite a senha">
+                    </div>
+                    <button onclick="checkPassword()" class="button button-primary">Entrar</button>
+                </div>
+
+                <!-- Conteúdo Administrativo -->
+                <div class="admin-content" id="adminContent" style="display: none;">
+                    <div class="admin-header">
+                        <div class="hamburger-menu">
+                            <div class="hamburger-icon" onclick="toggleMenu()">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="menu-items" id="menuItems">
+                                <button class="menu-btn" onclick="window.location.href='pedidos.html'">Pedidos</button>
+                                <button class="menu-btn" onclick="window.location.href='promocoes.html'">Promoções</button>
+                                <button class="menu-btn" onclick="window.location.href='estatisticas.html'">Estatísticas</button>
+                                <button class="menu-btn" onclick="window.location.href='cardapio.html'">Cardápio</button>
+                                <button class="menu-btn" onclick="window.location.href='ajustes.html'">Ajustes</button>
+                            </div>
+                            
+                        </div>
+                        <button onclick="logout()" class="logout-btn">Sair</button>
+                    </div>
+                    
+                    <!-- O restante do conteúdo permanece igual -->
+                    
+                    <div class="admin-section">
+                        <h2>📊 Estatísticas do Dia</h2>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3>Pedidos Hoje</h3>
+                                <span id="totalOrders">0</span>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Faturamento Total</h3>
+                                <span id="totalRevenue">R$ 0,00</span>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Total em PIX</h3>
+                                <span id="totalPix">R$ 0,00</span>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Total em Espécie</h3>
+                                <span id="totalCash">R$ 0,00</span>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Item Mais Vendido</h3>
+                                <span id="topProduct">-</span>
+                            </div>
+                        </div>
+                        <button onclick="resetSalesData()" class="button" 
+                                style="background: #ff4d4f; color: white; margin-top: 20px;">
+                            🗑️ Limpar Dados de Vendas
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Script principal -->
+    <script type="module" src="js/admin.js"></script>
+    
+</body>
+</html>
