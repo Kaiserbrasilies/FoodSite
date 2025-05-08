@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Itens</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/itens.css">
+    <style>
+        .dynamic-fields { margin-top: 1rem; }
+        .field-group { margin-bottom: 1rem; }
+        .add-field-btn { margin-bottom: 1rem; }
+        .size-option { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .combination-rules { background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1rem; }
+        .rule-group { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="categoryTitle">📦 Itens da Categoria</h1>
+            <div>
+                <button id="backBtn" class="button"><i class="fas fa-arrow-left"></i> Voltar</button>
+                <button id="addItemBtn" class="button primary"><i class="fas fa-plus"></i> Novo Item</button>
+            </div>
+        </header>
+        <!-- Adicione isso abaixo do header -->
+        <div class="category-selector">
+        <label for="categorySelect">Selecionar Categoria:</label>
+        <select id="categorySelect" class="form-control">
+        <option value="">-- Selecione uma categoria --</option>
+        </select>
+        </div>
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="itemSearch" placeholder="Pesquisar itens...">
+        </div>
+
+        <ul id="itemsList"></ul>
+    </div>
+
+    <!-- Modal para Itens -->
+    <div class="modal hidden" id="itemModal">
+        <div class="modal-content">
+            <h2 id="itemModalTitle"><i class="fas fa-pizza-slice"></i> Novo Item</h2>
+            <form id="itemForm">
+                <div class="input-group">
+                    <label>Nome do Item</label>
+                    <input type="text" id="itemName" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Descrição</label>
+                    <textarea id="itemDescription" rows="2"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>Preço Base (R$)</label>
+                    <input type="number" id="itemBasePrice" step="0.01" required>
+                </div>
+
+                <!-- Adicione este input-group após o campo de preço base -->
+                <div class="input-group">
+                    <label>Imagem do Item</label>
+                    <input type="file" id="itemImage" accept="image/*">
+                    <small>Apenas imagens (max 3MB)</small>
+                    <img id="imagePreview" src="#" alt="Pré-visualização" style="display: none; max-width: 200px; margin-top: 1rem;">
+                </div>
+
+                <div class="dynamic-fields">
+                    <h4>Tamanhos/Opcionais</h4>
+                    <button type="button" class="add-field-btn" id="addSize">+ Adicionar Tamanho</button>
+                    <div id="sizesContainer"></div>
+
+                    <button type="button" class="add-field-btn" id="addOption">+ Adicionar Opcional</button>
+                    <div id="optionsContainer"></div>
+                </div>
+
+                <div class="combination-rules">
+                    <h4>Regras de Combinação</h4>
+                    <div class="rule-group">
+                        <label>
+                            <input type="checkbox" id="meiaMeia"> Permitir meia a meia
+                        </label>
+                    </div>
+                    <div class="rule-group">
+                        <label>Cálculo de Preço:</label>
+                        <label><input type="radio" name="calculationType" value="average" checked> Média</label>
+                        <label><input type="radio" name="calculationType" value="sum"> Soma</label>
+                        <label><input type="radio" name="calculationType" value="max"> Maior valor</label>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelItemBtn" class="button">Cancelar</button>
+                    <button type="submit" class="button primary">Salvar Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/itens.js"></script>
+</body>
+</html>

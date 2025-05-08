@@ -20,27 +20,22 @@
                     <span class="cart-counter">0</span>
                 </button>
             </div>
-            <!-- Dentro do <div class="container"> do header -->
             <button id="botao-especial" class="button" style="display: none;">
-             Botão Especial
+                Botão Especial
             </button>
         </header>
     </div>
 
     <nav class="menu-horizontal-scroll">
-        <ul class="menu-scroll-list">
-          <li><a href="#bebidas">Bebidas</a></li>
-          <li><a href="#pizza">Pizza</a></li>
-          <li><a href="#calzone">Calzone</a></li>
-          <li><a href="#pastel">Pastel</a></li>
-          <li><a href="#acai">Açaí</a></li>
-          <li><a href="#porcoes">Porções</a></li>
-          <li><a href="#hamburguer">Hambúrguer</a></li>
-          <li><a href="#doces">Doces</a></li>
+        <ul class="menu-scroll-list" id="categoriesMenu">
+            <!-- Categorias serão carregadas dinamicamente aqui -->
         </ul>
-      </nav>
+    </nav>
       
-
+    <section class="items-container container" id="itemsSection">
+        <div class="items-grid" id="itemsGrid"></div>
+    </section>
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-block">
@@ -57,13 +52,13 @@
     </footer>
 
     <!-- Modal Carrinho -->
-    <div class="modal">
+    <div class="modal" id="cartModal">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h3 class="modal-title">Carrinho</h3>
                 <button class="close">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="cartItems">
                 <!-- Itens dinâmicos -->
             </div>
             <div class="modal-footer">
@@ -76,6 +71,29 @@
         </div>
     </div>
 
+    <!-- Modal de Opções -->
+    <div class="modal" id="optionsModal">
+        <div class="modal-dialog" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3 class="modal-title" id="itemOptionsTitle"></h3>
+                <button class="close">&times;</button>
+            </div>
+            <!-- Dentro do modal de opções, antes do footer -->
+            <div class="modal-body" id="itemOptionsBody">
+                <!-- Tudo aqui será gerado dinamicamente via JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <span class="modal-pricetag">Total: R$ <span id="selectedTotal">0.00</span></span>
+                <div class="footer-buttons">
+                    <button class="button button-primary" id="confirmSelection">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts externos -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
     <script src="data.js"></script>
     <script src="js/main.js"></script>
 </body>
